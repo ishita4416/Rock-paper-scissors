@@ -5,7 +5,8 @@ function computerPlay(list)
 
 let computerSelection = computerPlay(["Rock", "Paper", "Scissor"]);
 
-let playerSelection = prompt("Enter rock or paper or scissor");
+let playerInput = prompt("Enter rock or paper or scissor");
+let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
 
 function gamePlay(computerSelection, playerSelection)
 {
