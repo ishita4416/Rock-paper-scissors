@@ -49,6 +49,9 @@ function game()
         continue;
     }
     console.log(`Score: player ${playerScore} : computer ${computerScore}`);
+    if(playerScore>computerScore)
+    console.log('You Won! Congratulations!');
+    else console.log('You lost :( Better luck next time!');
 }
 
 game();
