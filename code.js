@@ -12,21 +12,17 @@ return playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
 }
 let playerSelection = playerPlay();
 
-let playerScore = 0;
-let computerScore = 0;
 let roundWon = '';
 
 function playRound(computerSelection, playerSelection)
 {
 if((computerSelection === "Rock" && playerSelection === "Paper") || (computerSelection === "Paper" && playerSelection === "Scissor") || (computerSelection === "Scissor" && playerSelection === "Rock"))
 { 
-playerScore++;
 roundWon = 'player';
 return("You Win! " + playerSelection + " beats " + computerSelection);
 }
 else if((computerSelection === "Rock" && playerSelection === "Scissor") || (computerSelection === "Paper" && playerSelection === "Rock") || (computerSelection === "Scissor" && playerSelection === "Paper"))
 {
-computerScore++;
 roundWon = 'computer';
 return("You Lose! " + computerSelection + " beats " + playerSelection);
 }
@@ -38,6 +34,8 @@ return("Tie!");
 
 function game()
 {
+    let playerScore = 0;
+    let computerScore = 0;
     playerScore = 0;
     computerScore = 0;
     for(let i=0; i<5; i++)
