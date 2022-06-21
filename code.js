@@ -4,14 +4,10 @@ function computerPlay()
     return list[Math.floor((Math.random()*list.length))];
 }
 
-let computerSelection = computerPlay();
-
 function playerPlay(){
 let playerInput = prompt("Enter rock or paper or scissor");
 return playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
 }
-let playerSelection = playerPlay();
-
 let roundWon = '';
 
 function playRound(computerSelection, playerSelection)
@@ -27,6 +23,7 @@ roundWon = 'computer';
 return("You Lose! " + computerSelection + " beats " + playerSelection);
 }
 else 
+roundWon = 'tie'
 return("Tie!");
 }
 
@@ -36,8 +33,6 @@ function game()
 {
     let playerScore = 0;
     let computerScore = 0;
-    playerScore = 0;
-    computerScore = 0;
     for(let i=0; i<5; i++)
     {
         let computerSelection = computerPlay();
@@ -50,7 +45,8 @@ function game()
         playerScore++;
         else if (roundWon === 'computer')
         computerScore++;
-        else break;
+        else if (roundWon === 'tie')
+        continue;
     }
     console.log(`Score: player ${playerScore} : computer ${computerScore}`);
 }
