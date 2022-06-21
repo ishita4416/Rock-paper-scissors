@@ -1,13 +1,16 @@
-function computerPlay(list) 
+function computerPlay() 
 {
+    list = ["Rock", "Paper", "Scissor"];
     return list[Math.floor((Math.random()*list.length))];
 }
 
-let computerSelection = computerPlay(["Rock", "Paper", "Scissor"]);
+let computerSelection = computerPlay();
 
+function playerPlay(){
 let playerInput = prompt("Enter rock or paper or scissor");
-let playerSelection = playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
-
+return playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
+}
+let playerSelection = playerPlay();
 
 let playerScore = 0;
 let computerScore = 0;
