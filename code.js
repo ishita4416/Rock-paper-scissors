@@ -34,20 +34,27 @@ else
 return("Tie!");
 }
 
-console.log(playRound(computerSelection, playerSelection));
+// console.log(playRound(computerSelection, playerSelection));
 
-// function game(playRound)
-// {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     for(let i=0; i<5; i++)
-//     {
-//         console.log(playRound(computerSelection, playerSelection));
-//         if(playRound(computerSelection, playerSelection) === win)
-//         playerScore++;
-//         else if (playRound(computerSelection, playerSelection) === lose)
-//         computerScore++;
-//         else break;
-//     }
-//     return playerScore, computerScore;
-// }
+function game()
+{
+    playerScore = 0;
+    computerScore = 0;
+    for(let i=0; i<5; i++)
+    {
+        let computerSelection = computerPlay();
+        let playerSelection = playerPlay();
+
+        let roundPlayed = playRound(playerSelection, computerSelection);
+        console.log(roundPlayed);
+        
+        if(roundWon === 'player')
+        playerScore++;
+        else if (roundWon === 'computer')
+        computerScore++;
+        else break;
+    }
+    console.log(`Score: player ${playerScore} : computer ${computerScore}`);
+}
+
+game();
